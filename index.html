@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quick App</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main>
+    <!-- start quiz button -->
+     <div id="start">
+        <button class="start-quiz">Start Quiz</button>
+     </div>
+
+     <div class="rules-container">
+      <div class="rules-header">
+        <h3 class="">Some Rules of this Quiz</h3>
+      </div>
+      <div class="rules-body">
+        <ol>
+          <li class="rules">You will have only <span id="duration">15 seconds</span> per each question</li>
+          <li class="rules">Once you select your answer, it can't be undone.</li>
+          <li class="rules">You can't select any option once time goes off.</li>
+          <li class="rules">You can't exit from the Quiz while you're playing.</li>
+          <li class="rules">You'll get points on the basis of your correct answers</li>
+        </ol>
+      </div>
+      <div class="rules-footer">
+        <div class="footer-buttons">
+          <button type="button" class="footer-button" id="exit-button">Exit Quiz</button>
+          <button type="button" class="footer-button continue-button" id="">Continue</button>
+        </div>
+      </div>
+     </div>
+
+     <!-- questions container -->
+      <div class="question-container">
+        <div class="question-header">
+          <div class="question-title">
+            <h3>Awesome Quiz Application</h3>
+          </div>
+          <div class="timer-container"><span class="time-left"></span></div>
+        </div>
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <div class="question-body">
+          <h2 id="question">1. Which of the following are not server-side Javascript Objects?</h2>
+          <ul>
+            <li class="question-option" id="option-one">Date</li>
+            <li class="question-option" id="option-two">FileUpload</li>
+            <li class="question-option" id="option-three">Function</li>
+            <li class="question-option" id="option-four">All of the above</li>
+          </ul>
+        </div>
+        <div class="question-footer">
+          <div class="question-counter">
+            <p id="count">1 of 10</p>
+          </div>
+          <div class="next-button next-question">
+            <button type="button" class="footer-button continue-button" id="next-que">Next Que</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- summary section -->
+       <div class="summary">
+        <p class="congrats">You've Completed the Quiz!</p>
+        <p class="result">
+          and congrats!, You got <span id="score"></span> out of 10
+        </p>
+
+        <div class="summary-button">
+          <button type="button" class="footer-button continue-button replay">Replay Quiz</button>
+          <button type="button" class="footer-button quit">Quit Quiz</button>
+        </div>
+       </div>
+  </main>
+
+
+  <!-- main javascript -->
+   <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -127,15 +127,52 @@ let question = document.querySelector("#question"),
   optionFour = document.querySelector("#option-four");
 
 // function to display questions and options
+
+// let currentItem = 0;
+// function showQuestion() {
+//   let item = questionBank[currentItem];
+//   question.textContent = item.question;
+//   optionOne.textContent = item.correctAnswer;
+//   optionTwo.textContent = item.incorrectOne;
+//   optionThree.textContent = item.incorrectTwo;
+//   optionFour.textContent = item.incorrectThree;
+// };
+
 let currentItem = 0;
+
+function shuffleOptions(options) {
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
+}
+
 function showQuestion() {
   let item = questionBank[currentItem];
   question.textContent = item.question;
-  optionOne.textContent = item.correctAnswer;
-  optionTwo.textContent = item.incorrectOne;
-  optionThree.textContent = item.incorrectTwo;
-  optionFour.textContent = item.incorrectThree;
-};
+
+  // Create an array of options
+  let options = [
+    { text: item.correctAnswer, isCorrect: true },
+    { text: item.incorrectOne, isCorrect: false },
+    { text: item.incorrectTwo, isCorrect: false },
+    { text: item.incorrectThree, isCorrect: false },
+  ];
+
+  // Shuffle the options
+  let shuffledOptions = shuffleOptions(options);
+
+  // Assign the shuffled options to the buttons
+  optionOne.textContent = shuffledOptions[0].text;
+  optionOne.dataset.correct = shuffledOptions[0].isCorrect;
+  optionTwo.textContent = shuffledOptions[1].text;
+  optionTwo.dataset.correct = shuffledOptions[1].isCorrect;
+  optionThree.textContent = shuffledOptions[2].text;
+  optionThree.dataset.correct = shuffledOptions[2].isCorrect;
+  optionFour.textContent = shuffledOptions[3].text;
+  optionFour.dataset.correct = shuffledOptions[3].isCorrect;
+}
 
 // Event listener for next question button
 nextQuestion.addEventListener("click", () => {

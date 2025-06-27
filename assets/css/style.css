@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/bg-image.jpg");
   background-size: cover;
 }
@@ -161,13 +161,17 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+  main {
+    height: 100vh;
+  }
   .rules-container,
   .question-container {
     width: 90%;
+    padding: 10px;
   }
   .start-quiz {
     font-size: 1.2rem;
-    padding: 15px 30px;
+    padding: 15px;
   }
 
   .timer-container {
@@ -175,16 +179,9 @@ main {
     text-align: center;
     font-size: 16px;
   }
-  /* questions container */
-  .question-container {
-    font-size: 14px;
-    width: 90%;
-    padding: 0;
-  }
 
   /* summary */
   .summary {
     width: 90%;
-
   }
 }

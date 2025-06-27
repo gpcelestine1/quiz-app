@@ -7,7 +7,9 @@
 }
 
 body {
-  background-color: #fce6fd;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/bg-image.jpg");
+  background-size: cover;
 }
 
 main {
@@ -17,22 +19,24 @@ main {
   justify-content: center;
 }
 .start-quiz {
-  /* display: none; */
+  background-color: #000000;
+  color: #ffffff;
   padding: 20px 40px;
   font-size: 1.5rem;
   border: none;
-  box-shadow: 0 2px 10px gray;
-  color: blue;
+  box-shadow: 0 0 5px #ffffff;
   cursor: pointer;
+  opacity: 0.7;
 }
 
 /* rules container */
 .rules-container {
+  background-color: #000000;
+  opacity: 0.7;
+  color: #ffffff;
   display: none;
   width: 500px;
-  /* height: 50vh; */
-  box-shadow: 0 5px 9px gray;
-  background-color: white;
+  box-shadow: 0 0 5px #ffffff;
 }
 
 .rules-header {
@@ -50,7 +54,7 @@ main {
   flex-direction: column;
   gap: 8px;
 }
-#duration{
+#duration {
   color: blue;
 }
 
@@ -73,10 +77,12 @@ main {
 
 /* question container */
 .question-container {
+  background-color: #000000;
+  color: #ffffff;
   display: none;
-  box-shadow: 0 5px 9px gray;
+  box-shadow: 0 0 5px #ffffff;
   width: 540px;
-  background-color: white;
+  opacity: 0.7;
 }
 .question-header {
   display: flex;
@@ -84,18 +90,18 @@ main {
   padding: 15px 40px;
   align-items: center;
 }
-.timer-container{
-  background-color: #CCE5FF;
+.timer-container {
+  background-color: #0000ff;
   font-size: 20px;
   padding: 10px;
 }
-.progress-bar{
+.progress-bar {
   width: 100%;
   height: 2px;
   background-color: rgb(199, 196, 196);
   overflow: hidden;
 }
-.progress-bar div{
+.progress-bar div {
   width: 0%;
   height: 100%;
   background-color: blue;
@@ -118,7 +124,7 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
-.question-body ul li:hover{
+.question-body ul li:hover {
   background-color: rgb(208, 246, 237);
 }
 .question-footer {
@@ -128,7 +134,7 @@ main {
   padding: 10px 40px;
 }
 /* next question */
-#next-que{
+#next-que {
   display: none;
 }
 /* summary section */
@@ -152,4 +158,33 @@ main {
   justify-content: center;
   gap: 15px;
   margin: 20px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .rules-container,
+  .question-container {
+    width: 90%;
+  }
+  .start-quiz {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+
+  .timer-container {
+    width: 190px;
+    text-align: center;
+    font-size: 16px;
+  }
+  /* questions container */
+  .question-container {
+    font-size: 14px;
+    width: 90%;
+    padding: 0;
+  }
+
+  /* summary */
+  .summary {
+    width: 90%;
+
+  }
 }
